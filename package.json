@@ -2,11 +2,19 @@
   "name": "aws-bootstrap",
   "version": "1.0.0",
   "description": "",
+  "private": true,
   "main": "index.js",
   "scripts": {
+    "start": "node ./node_modules/pm2/bin/pm2 start ./server.js --name hello_aws --log ../logs/app.log",
+    "stop": "node ./node_modules/pm2/bin/pm2 stop hello_aws",
+    "build": "echo \"Building...\"",
+    "delete": "node ./node_modules/pm2/bin/pm2 delete hello_aws",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "Param Siddharth <contact@paramsid.com> (http://www.paramsid.com/)",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "pm2": "^5.1.1"
+  }
 }
